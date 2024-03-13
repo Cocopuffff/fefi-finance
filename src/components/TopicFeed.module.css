@@ -1,0 +1,70 @@
+.row {
+  --bs-gutter-x: 0.5rem;
+}
+
+.topicFeed {
+  height: inherit;
+  overflow-y: scroll;
+}
+
+.searchBar {
+  display: flex;
+  justify-content: center;
+  background-color: var(--content-background-colour);
+  width: 400px;
+  height: 40px;
+  border-radius: 20px;
+  margin: 20px auto;
+  border: 2px solid transparent;
+}
+
+.searchButton {
+  display: block;
+  background-color: transparent;
+  border: none;
+  color: white;
+}
+
+.searchInput {
+  display: flex;
+  background-color: transparent;
+  border: none;
+  align-items: center;
+  overflow: hidden;
+  text-overflow: clip;
+  white-space: nowrap;
+  flex-grow: 1;
+  color: white;
+}
+
+.searchInput:focus-visible {
+  outline: none;
+}
+
+.selected {
+  border: 2px solid var(--selected);
+}
+
+.topic {
+  display: flex;
+  justify-content: space-between;
+}
+
+.searchTopic,
+.searchParameter,
+.edit {
+  display: inline-block;
+}
+
+.edit {
+  border: none;
+  border-radius: 5px;
+  background-color: transparent;
+  color: white;
+  height: 2rem;
+  width: 2rem;
+}
+
+.edit:hover {
+  background-color: var(--button-hover);
+}

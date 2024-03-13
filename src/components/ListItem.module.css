@@ -1,0 +1,31 @@
+.sidebarItem {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid transparent;
+  font-size: 0.8rem;
+}
+
+.name {
+  overflow-x: clip;
+  text-wrap: nowrap;
+}
+
+.delete {
+  border: none;
+  background-color: transparent;
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.selected {
+  border: 2px solid var(--selected);
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.active {
+  background-color: var(--button-hover);
+}

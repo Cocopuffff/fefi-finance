@@ -1,0 +1,42 @@
+.navbar {
+  display: flex;
+  height: 40px;
+  position: sticky;
+  background-color: var(--navbar-colour);
+  justify-content: space-between;
+}
+
+.logo,
+.account {
+  margin: 0 10px;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.logo {
+  height: 100%;
+}
+
+.account {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1/1;
+  background-color: var(--content-background-colour);
+}
+
+.menu,
+.submenu {
+  display: flex;
+  align-items: center;
+}
+
+.menu {
+  justify-content: space-between;
+  width: 200px;
+}
+
+.pages {
+  flex-grow: 1;
+  text-align: center;
+}

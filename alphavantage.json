@@ -1,0 +1,972 @@
+{
+  "items": "17",
+  "sentiment_score_definition": "x <= -0.35: Bearish; -0.35 < x <= -0.15: Somewhat-Bearish; -0.15 < x < 0.15: Neutral; 0.15 <= x < 0.35: Somewhat_Bullish; x >= 0.35: Bullish",
+  "relevance_score_definition": "0 < x <= 1, with a higher score indicating higher relevance.",
+  "feed": [
+    {
+      "title": "Dollar Drifts Near One-Month Lows on Fed's Policy Hint | Capital Market News",
+      "url": "https://www.business-standard.com/markets/capital-market-news/dollar-drifts-near-one-month-lows-on-fed-s-policy-hint-124030700373_1.html",
+      "time_published": "20240307T071400",
+      "authors": ["Capital Market"],
+      "summary": "Dollar Drifts Near One-Month Lows on Fed's Policy Hint Business Standard ...",
+      "banner_image": "https://www.business-standard.com/assets/web-assets/images/Business_Standard_685x385.jpg",
+      "source": "Business Standard",
+      "category_within_source": "GoogleRSS",
+      "source_domain": "www.business-standard.com",
+      "topics": [
+        {
+          "topic": "Economy - Monetary",
+          "relevance_score": "0.310843"
+        },
+        {
+          "topic": "Economy - Macro",
+          "relevance_score": "0.158519"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.108179"
+        }
+      ],
+      "overall_sentiment_score": -0.254788,
+      "overall_sentiment_label": "Somewhat-Bearish",
+      "ticker_sentiment": [
+        {
+          "ticker": "FOREX:JPY",
+          "relevance_score": "0.33628",
+          "ticker_sentiment_score": "-0.25867",
+          "ticker_sentiment_label": "Somewhat-Bearish"
+        },
+        {
+          "ticker": "FOREX:USD",
+          "relevance_score": "0.615462",
+          "ticker_sentiment_score": "-0.372722",
+          "ticker_sentiment_label": "Bearish"
+        }
+      ]
+    },
+    {
+      "title": "Japan Nikkei falls 1.23% | Capital Market News",
+      "url": "https://www.business-standard.com/markets/capital-market-news/japan-nikkei-falls-1-23-124030700700_1.html",
+      "time_published": "20240307T105400",
+      "authors": ["Capital Market"],
+      "summary": "Japan Nikkei falls 1.23% Business Standard ...",
+      "banner_image": "https://www.business-standard.com/assets/web-assets/images/Business_Standard_685x385.jpg",
+      "source": "Business Standard",
+      "category_within_source": "GoogleRSS",
+      "source_domain": "www.business-standard.com",
+      "topics": [
+        {
+          "topic": "Economy - Monetary",
+          "relevance_score": "0.158519"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.538269"
+        }
+      ],
+      "overall_sentiment_score": -0.087325,
+      "overall_sentiment_label": "Neutral",
+      "ticker_sentiment": [
+        {
+          "ticker": "SNEJF",
+          "relevance_score": "0.17715",
+          "ticker_sentiment_score": "-0.092448",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "TOELF",
+          "relevance_score": "0.17715",
+          "ticker_sentiment_score": "-0.092448",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "ADTTF",
+          "relevance_score": "0.17715",
+          "ticker_sentiment_score": "-0.092448",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "FOREX:JPY",
+          "relevance_score": "0.17715",
+          "ticker_sentiment_score": "0.069907",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "S&P 500 inches away from all-time highs amid rate cut expectations; GIFT Nifty up",
+      "url": "https://www.moneycontrol.com/news/business/markets/s-gift-nifty-up-12421951.html",
+      "time_published": "20240307T155253",
+      "authors": [],
+      "summary": "US markets rose for a second day on Thursday with the SP 500 close to record high levels. CAC crossed the 8000-mark leading European markets into green territory. Asian indices witnessed a mixed session and Crude fell into the red.",
+      "banner_image": "https://images.moneycontrol.com/static-mcnews/2023/08/Oil-and-Gas.jpg?impolicy=website&width=168&height=118",
+      "source": "Money Control",
+      "category_within_source": "Markets",
+      "source_domain": "www.moneycontrol.com",
+      "topics": [
+        {
+          "topic": "Economy - Monetary",
+          "relevance_score": "0.158519"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.161647"
+        }
+      ],
+      "overall_sentiment_score": 0.004902,
+      "overall_sentiment_label": "Neutral",
+      "ticker_sentiment": [
+        {
+          "ticker": "FOREX:JPY",
+          "relevance_score": "0.175859",
+          "ticker_sentiment_score": "0.01877",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "Stock market today: Global shares mostly decline after Wall Street recovers",
+      "url": "https://apnews.com/article/stock-markets-china-tech-powell-c4824fbca1b474705c739b4528a58113",
+      "time_published": "20240307T125615",
+      "authors": ["YURI KAGEYAMA"],
+      "summary": "Stock market today: Wall Street set to open with small gains as Powell heads to Capitol Hill again The Associated Press ...",
+      "banner_image": "https://dims.apnews.com/dims4/default/c343233/2147483647/strip/true/crop/3673x2447+0+1/resize/599x399!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2F9b%2Fec%2Fd98e51e57810bbad577549b959d6%2Fd0a676f5da76442990714ef097c645a6",
+      "source": "Associated Press",
+      "category_within_source": "Markets",
+      "source_domain": "apnews.com",
+      "topics": [
+        {
+          "topic": "Economy - Monetary",
+          "relevance_score": "0.890401"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.214378"
+        }
+      ],
+      "overall_sentiment_score": -0.156117,
+      "overall_sentiment_label": "Somewhat-Bearish",
+      "ticker_sentiment": [
+        {
+          "ticker": "FOREX:JPY",
+          "relevance_score": "0.16849",
+          "ticker_sentiment_score": "0.088674",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "FOREX:EUR",
+          "relevance_score": "0.084722",
+          "ticker_sentiment_score": "0.0",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "FOREX:USD",
+          "relevance_score": "0.16849",
+          "ticker_sentiment_score": "-0.013251",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "Shares rally to records ahead of US jobs report, yields and dollar down",
+      "url": "https://www.moneycontrol.com/news/business/markets/shares-rally-to-records-ahead-of-us-jobs-report-yields-and-dollar-down-12422551.html",
+      "time_published": "20240308T004244",
+      "authors": [],
+      "summary": "The yield on benchmark 10-year U.S. Treasury notes hit a near one-month low then steadied as investors adjusted positions before Friday's release of the February U.S. payrolls report.",
+      "banner_image": "https://images.moneycontrol.com/static-mcnews/2020/06/wall-street_june-30.jpg?impolicy=website&width=168&height=118",
+      "source": "Money Control",
+      "category_within_source": "Markets",
+      "source_domain": "www.moneycontrol.com",
+      "topics": [
+        {
+          "topic": "Technology",
+          "relevance_score": "0.5"
+        },
+        {
+          "topic": "Finance",
+          "relevance_score": "0.5"
+        },
+        {
+          "topic": "Blockchain",
+          "relevance_score": "0.158519"
+        },
+        {
+          "topic": "Economy - Monetary",
+          "relevance_score": "0.9545"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.998333"
+        },
+        {
+          "topic": "Earnings",
+          "relevance_score": "0.158519"
+        },
+        {
+          "topic": "Economy - Macro",
+          "relevance_score": "0.158519"
+        }
+      ],
+      "overall_sentiment_score": 0.060607,
+      "overall_sentiment_label": "Neutral",
+      "ticker_sentiment": [
+        {
+          "ticker": "USAU",
+          "relevance_score": "0.05234",
+          "ticker_sentiment_score": "0.234712",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        },
+        {
+          "ticker": "LPLA",
+          "relevance_score": "0.05234",
+          "ticker_sentiment_score": "-0.005987",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "FOREX:JPY",
+          "relevance_score": "0.156123",
+          "ticker_sentiment_score": "-0.176934",
+          "ticker_sentiment_label": "Somewhat-Bearish"
+        },
+        {
+          "ticker": "FOREX:EUR",
+          "relevance_score": "0.05234",
+          "ticker_sentiment_score": "-0.239722",
+          "ticker_sentiment_label": "Somewhat-Bearish"
+        },
+        {
+          "ticker": "FOREX:USD",
+          "relevance_score": "0.207127",
+          "ticker_sentiment_score": "0.117885",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "CRYPTO:BTC",
+          "relevance_score": "0.05234",
+          "ticker_sentiment_score": "0.177608",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        },
+        {
+          "ticker": "CRYPTO:ETH",
+          "relevance_score": "0.05234",
+          "ticker_sentiment_score": "0.177608",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        }
+      ]
+    },
+    {
+      "title": "Asia shares strike seven-month high ahead of US jobs data",
+      "url": "https://www.moneycontrol.com/news/business/markets/asia-shares-strike-seven-month-high-ahead-of-us-jobs-data-12422721.html",
+      "time_published": "20240308T024108",
+      "authors": [],
+      "summary": "Japan remained an outlier as expectations mount that the Bank of Japan ( BOJ ) could finally exit negative interest rates this month. That lit a fire under the yen and sent domestic bond yields rising.",
+      "banner_image": "https://images.moneycontrol.com/static-mcnews/2024/02/Nifty_sensex_marketup-4.jpg?impolicy=website&width=168&height=118",
+      "source": "Money Control",
+      "category_within_source": "Markets",
+      "source_domain": "www.moneycontrol.com",
+      "topics": [
+        {
+          "topic": "Economy - Monetary",
+          "relevance_score": "0.983605"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.997405"
+        }
+      ],
+      "overall_sentiment_score": 0.079452,
+      "overall_sentiment_label": "Neutral",
+      "ticker_sentiment": [
+        {
+          "ticker": "FOREX:JPY",
+          "relevance_score": "0.13637",
+          "ticker_sentiment_score": "-0.023736",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "FOREX:EUR",
+          "relevance_score": "0.045655",
+          "ticker_sentiment_score": "-0.099762",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "FOREX:GBP",
+          "relevance_score": "0.045655",
+          "ticker_sentiment_score": "0.0",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "FOREX:USD",
+          "relevance_score": "0.091162",
+          "ticker_sentiment_score": "0.090607",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "CRYPTO:BTC",
+          "relevance_score": "0.045655",
+          "ticker_sentiment_score": "0.076738",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "Asian shares rally on US rate relief, yen jumps on BOJ chatter",
+      "url": "https://www.moneycontrol.com/news/business/markets/asian-shares-rally-on-us-rate-relief-yen-jumps-on-boj-chatter-12416681.html",
+      "time_published": "20240307T025051",
+      "authors": [],
+      "summary": "Japan's Nikkei reversed earlier gains and the yen jumped past the 149 per dollar level to the highest in a month as momentum builds that a move from the Bank of Japan to end negative interest rates could come as soon as this month.",
+      "banner_image": "https://images.moneycontrol.com/static-mcnews/2023/01/Fed-FI.jpg?impolicy=website&width=168&height=118",
+      "source": "Money Control",
+      "category_within_source": "Markets",
+      "source_domain": "www.moneycontrol.com",
+      "topics": [
+        {
+          "topic": "Economy - Monetary",
+          "relevance_score": "0.890401"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.650727"
+        }
+      ],
+      "overall_sentiment_score": 0.111418,
+      "overall_sentiment_label": "Neutral",
+      "ticker_sentiment": [
+        {
+          "ticker": "FOREX:JPY",
+          "relevance_score": "0.130926",
+          "ticker_sentiment_score": "-0.045444",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "FOREX:USD",
+          "relevance_score": "0.195287",
+          "ticker_sentiment_score": "0.0",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "Hunger for Tech",
+      "url": "https://www.investorideas.com/news/2024/main/03083MonicaKingsley-Tech.asp",
+      "time_published": "20240308T144921",
+      "authors": [],
+      "summary": "March 8, 2024 ( Investorideas.com Newswire ) Overpowering a bunch of bearish to neutral catalysts, with BoJ and ECB balancing themselves out, semiconductors doing great throughout the regular session - no matter how short-term overbought equities are or the bearish divergencies manifest for ...",
+      "banner_image": null,
+      "source": "Investor Ideas",
+      "category_within_source": "n/a",
+      "source_domain": "www.investorideas.com",
+      "topics": [
+        {
+          "topic": "Economy - Monetary",
+          "relevance_score": "0.310843"
+        },
+        {
+          "topic": "Technology",
+          "relevance_score": "1.0"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.858979"
+        }
+      ],
+      "overall_sentiment_score": 0.141846,
+      "overall_sentiment_label": "Neutral",
+      "ticker_sentiment": [
+        {
+          "ticker": "GOOG",
+          "relevance_score": "0.054983",
+          "ticker_sentiment_score": "0.084967",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "FOREX:JPY",
+          "relevance_score": "0.109705",
+          "ticker_sentiment_score": "0.019201",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "Kyoto's picturesque geisha district fights back against over-tourism with keep-out signs",
+      "url": "https://apnews.com/article/japan-tourism-kyoto-geisha-ban-1162257d8642a85db447a6f4afdbb249",
+      "time_published": "20240308T044021",
+      "authors": ["YURI KAGEYAMA"],
+      "summary": "TOKYO ( AP ) - Japan's ancient capital of Kyoto, long a popular destination for tourists, is closing off some private-property alleys in its famous geisha district because of complaints about misbehaving visitors.",
+      "banner_image": "https://dims.apnews.com/dims4/default/7b3a595/2147483647/strip/true/crop/4059x2704+0+1/resize/599x399!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2Fd9%2Fff%2F35977b03332d4d1c04c8f84432f6%2Fa53fa54b947e445ba77f7c045ff42861",
+      "source": "Associated Press",
+      "category_within_source": "Business",
+      "source_domain": "apnews.com",
+      "topics": [],
+      "overall_sentiment_score": 0.08607,
+      "overall_sentiment_label": "Neutral",
+      "ticker_sentiment": [
+        {
+          "ticker": "FOREX:JPY",
+          "relevance_score": "0.092927",
+          "ticker_sentiment_score": "0.086548",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "US shares end higher, Treasury yields dip as Jerome Powell gives rate cut assurances",
+      "url": "https://www.moneycontrol.com/news/business/markets/us-shares-end-higher-treasury-yields-dip-as-jerome-powell-gives-rate-cut-assurances-12416121.html",
+      "time_published": "20240307T010733",
+      "authors": [],
+      "summary": "All three major U.S. stock indexes closed well below session highs, marking a partial rebound from Tuesday's steep sell-off. The tech-heavy Nasdaq enjoyed the most robust gain.",
+      "banner_image": "https://images.moneycontrol.com/static-mcnews/2023/01/Fed-FI.jpg?impolicy=website&width=168&height=118",
+      "source": "Money Control",
+      "category_within_source": "Markets",
+      "source_domain": "www.moneycontrol.com",
+      "topics": [
+        {
+          "topic": "Economy - Monetary",
+          "relevance_score": "0.890401"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.316726"
+        },
+        {
+          "topic": "Blockchain",
+          "relevance_score": "0.310843"
+        },
+        {
+          "topic": "Economy - Macro",
+          "relevance_score": "0.158519"
+        }
+      ],
+      "overall_sentiment_score": -0.012085,
+      "overall_sentiment_label": "Neutral",
+      "ticker_sentiment": [
+        {
+          "ticker": "FOREX:JPY",
+          "relevance_score": "0.068112",
+          "ticker_sentiment_score": "0.113356",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "FOREX:EUR",
+          "relevance_score": "0.068112",
+          "ticker_sentiment_score": "-0.23218",
+          "ticker_sentiment_label": "Somewhat-Bearish"
+        },
+        {
+          "ticker": "FOREX:GBP",
+          "relevance_score": "0.068112",
+          "ticker_sentiment_score": "0.113356",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "FOREX:USD",
+          "relevance_score": "0.135729",
+          "ticker_sentiment_score": "-0.171974",
+          "ticker_sentiment_label": "Somewhat-Bearish"
+        },
+        {
+          "ticker": "CRYPTO:BTC",
+          "relevance_score": "0.068112",
+          "ticker_sentiment_score": "0.068169",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "These tourist hot spots are introducing entry fees and price hikes for 2024",
+      "url": "https://www.cnn.com/travel/travel-news-tourist-hot-spots-entry-fees/index.html",
+      "time_published": "20240309T133000",
+      "authors": ["Maureen Ohare"],
+      "summary": "These tourist hot spots are introducing entry fees and price hikes for ...",
+      "banner_image": "https://media.cnn.com/api/v1/images/stellar/prod/240305135340-corpse-flower.jpg?c=16x9&q=w_850,c_fill",
+      "source": "CNN",
+      "category_within_source": "Markets",
+      "source_domain": "www.cnn.com",
+      "topics": [
+        {
+          "topic": "Energy & Transportation",
+          "relevance_score": "1.0"
+        }
+      ],
+      "overall_sentiment_score": 0.069674,
+      "overall_sentiment_label": "Neutral",
+      "ticker_sentiment": [
+        {
+          "ticker": "WBD",
+          "relevance_score": "0.247208",
+          "ticker_sentiment_score": "0.271728",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        },
+        {
+          "ticker": "UAL",
+          "relevance_score": "0.062761",
+          "ticker_sentiment_score": "-0.262452",
+          "ticker_sentiment_label": "Somewhat-Bearish"
+        },
+        {
+          "ticker": "FOREX:JPY",
+          "relevance_score": "0.062761",
+          "ticker_sentiment_score": "-0.039465",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "Kazuchika Okada's AEW Contract Could Impact WWE Free Agents",
+      "url": "https://www.forbes.com/sites/blakeoestriecher/2024/03/08/kazuchika-okadas-massive-aew-contract-could-have-huge-effect-on-wwe-free-agents/",
+      "time_published": "20240308T135613",
+      "authors": ["Blake Oestriecher"],
+      "summary": "AEW's newest signing, former NJPW star Kazuchika Okada, now finds himself among the highest-paid stars in all of pro wrestling.",
+      "banner_image": "https://imageio.forbes.com/specials-images/imageserve/65ea442737375457dfe47448/0x0.jpg?format=jpg&height=900&width=1600&fit=bounds",
+      "source": "Forbes",
+      "category_within_source": "n/a",
+      "source_domain": "www.forbes.com",
+      "topics": [],
+      "overall_sentiment_score": 0.10539,
+      "overall_sentiment_label": "Neutral",
+      "ticker_sentiment": [
+        {
+          "ticker": "FOREX:JPY",
+          "relevance_score": "0.057079",
+          "ticker_sentiment_score": "0.027957",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "Sterling outshines rivals as UK economy holds up better than expected",
+      "url": "https://www.ft.com/content/8f6b1a29-bb26-491f-8cc7-a62deace09a3",
+      "time_published": "20240308T154201",
+      "authors": ["Stephanie Stacey", "Mary McDougall"],
+      "summary": "Sterling is the only major developed world currency to strengthen against the dollar this year, driven by a stronger than expected UK economy and growing hopes of imminent US interest rate cuts.",
+      "banner_image": "https://www.ft.com/__origami/service/image/v2/images/raw/https%3A%2F%2Fd1e00ek4ebabms.cloudfront.net%2Fproduction%2Fa921c17f-aba6-40de-ae44-4b9bf6d40eb6.jpg?source=next-article&fit=scale-down&quality=highest&width=700&dpr=1",
+      "source": "Financial Times",
+      "category_within_source": "GoogleRSS",
+      "source_domain": "www.ft.com",
+      "topics": [
+        {
+          "topic": "Economy - Monetary",
+          "relevance_score": "0.451494"
+        },
+        {
+          "topic": "Finance",
+          "relevance_score": "1.0"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.161647"
+        }
+      ],
+      "overall_sentiment_score": 0.122239,
+      "overall_sentiment_label": "Neutral",
+      "ticker_sentiment": [
+        {
+          "ticker": "BAC",
+          "relevance_score": "0.054114",
+          "ticker_sentiment_score": "-0.116136",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "STT",
+          "relevance_score": "0.054114",
+          "ticker_sentiment_score": "0.05097",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "FOREX:JPY",
+          "relevance_score": "0.054114",
+          "ticker_sentiment_score": "-0.003999",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "FOREX:EUR",
+          "relevance_score": "0.054114",
+          "ticker_sentiment_score": "-0.003999",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "FOREX:GBP",
+          "relevance_score": "0.316168",
+          "ticker_sentiment_score": "0.116054",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "FOREX:CAD",
+          "relevance_score": "0.054114",
+          "ticker_sentiment_score": "-0.003999",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "FOREX:USD",
+          "relevance_score": "0.161349",
+          "ticker_sentiment_score": "0.103838",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "Bank of Japan leaning toward exiting negative rates in March: Report",
+      "url": "https://www.business-standard.com/world-news/bank-of-japan-leaning-toward-exiting-negative-rates-in-march-report-124030800557_1.html",
+      "time_published": "20240308T112923",
+      "authors": ["Reuters"],
+      "summary": "A growing number of Bank of Japan policymakers are warming to the idea of ending negative interest rates this month on expectations of hefty pay hikes in this year's annual wage negotiations, four sources familiar with its thinking said.",
+      "banner_image": "https://bsmedia.business-standard.com/_media/bs/img/article/2017-12/12/full/1513070324-4396.jpg?im=FeatureCrop,size=(826,465)",
+      "source": "Business Standard",
+      "category_within_source": "GoogleRSS",
+      "source_domain": "www.business-standard.com",
+      "topics": [
+        {
+          "topic": "Economy - Monetary",
+          "relevance_score": "0.972193"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.365926"
+        }
+      ],
+      "overall_sentiment_score": -0.060546,
+      "overall_sentiment_label": "Neutral",
+      "ticker_sentiment": [
+        {
+          "ticker": "ASBRF",
+          "relevance_score": "0.044885",
+          "ticker_sentiment_score": "-0.102906",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "FOREX:JPY",
+          "relevance_score": "0.044885",
+          "ticker_sentiment_score": "-0.102295",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "FOREX:USD",
+          "relevance_score": "0.089629",
+          "ticker_sentiment_score": "-0.10821",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "Private credit funds lure family offices, wealthy individuals as returns sizzle",
+      "url": "https://www.scmp.com/business/banking-finance/article/3254617/private-credit-funds-appeal-family-offices-wealthy-investors-returns-sizzle-amid-market-challenges",
+      "time_published": "20240308T050421",
+      "authors": ["Aileen Chuang"],
+      "summary": "Private credit is becoming particularly appealing to affluent families who previously found access to this investment avenue restricted due to its exclusivity, according to William Chow at Raffles Family Office.",
+      "banner_image": "https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2024/03/08/fd56af01-c876-481b-a00f-68a4deabafdc_97a2180b.jpg",
+      "source": "South China Morning Post",
+      "category_within_source": "Business",
+      "source_domain": "www.scmp.com",
+      "topics": [
+        {
+          "topic": "Earnings",
+          "relevance_score": "0.310843"
+        },
+        {
+          "topic": "Finance",
+          "relevance_score": "1.0"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "1.0"
+        }
+      ],
+      "overall_sentiment_score": 0.241057,
+      "overall_sentiment_label": "Somewhat-Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "DSECF",
+          "relevance_score": "0.040829",
+          "ticker_sentiment_score": "-0.04834",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "GS",
+          "relevance_score": "0.040829",
+          "ticker_sentiment_score": "-0.129772",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "BX",
+          "relevance_score": "0.081552",
+          "ticker_sentiment_score": "0.018443",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "FOREX:JPY",
+          "relevance_score": "0.040829",
+          "ticker_sentiment_score": "-0.04834",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "2 Top Web3 Stocks to Buy in March",
+      "url": "https://www.fool.com/investing/2024/03/07/2-top-web3-stocks-to-buy-in-march/",
+      "time_published": "20240307T125100",
+      "authors": ["Anders Bylund"],
+      "summary": "Technically speaking, it's one stock and a tailor-made Web3 cryptocurrency. Both are great investments for a Web3 future.",
+      "banner_image": "https://g.foolcdn.com/editorial/images/768151/businessperson-website-online-work-at-home-getty.jpg",
+      "source": "Motley Fool",
+      "category_within_source": "n/a",
+      "source_domain": "www.fool.com",
+      "topics": [
+        {
+          "topic": "Economy - Monetary",
+          "relevance_score": "0.682689"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.996023"
+        },
+        {
+          "topic": "Earnings",
+          "relevance_score": "0.158519"
+        },
+        {
+          "topic": "Technology",
+          "relevance_score": "0.5"
+        },
+        {
+          "topic": "Finance",
+          "relevance_score": "0.5"
+        },
+        {
+          "topic": "Blockchain",
+          "relevance_score": "0.99489"
+        }
+      ],
+      "overall_sentiment_score": 0.213616,
+      "overall_sentiment_label": "Somewhat-Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "GOOG",
+          "relevance_score": "0.032825",
+          "ticker_sentiment_score": "0.135056",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "META",
+          "relevance_score": "0.065595",
+          "ticker_sentiment_score": "0.031084",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "COIN",
+          "relevance_score": "0.195025",
+          "ticker_sentiment_score": "0.166812",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        },
+        {
+          "ticker": "FOREX:JPY",
+          "relevance_score": "0.032825",
+          "ticker_sentiment_score": "0.155554",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        },
+        {
+          "ticker": "CRYPTO:BTC",
+          "relevance_score": "0.098255",
+          "ticker_sentiment_score": "0.068845",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "CRYPTO:ETH",
+          "relevance_score": "0.065595",
+          "ticker_sentiment_score": "0.103227",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "CRYPTO:LINK",
+          "relevance_score": "0.032825",
+          "ticker_sentiment_score": "0.130193",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "Alliance Trust PLC - Final Results",
+      "url": "https://www.globenewswire.com/news-release/2024/03/07/2841939/0/en/Alliance-Trust-PLC-Final-Results.html",
+      "time_published": "20240307T070000",
+      "authors": ["Alliance Trust Plc"],
+      "summary": "Alliance Trust PLC ( 'the Company' ) LEI: ...",
+      "banner_image": "",
+      "source": "GlobeNewswire",
+      "category_within_source": "n/a",
+      "source_domain": "www.globenewswire.com",
+      "topics": [
+        {
+          "topic": "Life Sciences",
+          "relevance_score": "0.2"
+        },
+        {
+          "topic": "Technology",
+          "relevance_score": "0.2"
+        },
+        {
+          "topic": "Finance",
+          "relevance_score": "0.2"
+        },
+        {
+          "topic": "Economy - Monetary",
+          "relevance_score": "0.99489"
+        },
+        {
+          "topic": "Retail & Wholesale",
+          "relevance_score": "0.2"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "1.0"
+        },
+        {
+          "topic": "Manufacturing",
+          "relevance_score": "0.2"
+        },
+        {
+          "topic": "Earnings",
+          "relevance_score": "0.998947"
+        },
+        {
+          "topic": "Mergers & Acquisitions",
+          "relevance_score": "0.310843"
+        }
+      ],
+      "overall_sentiment_score": 0.214049,
+      "overall_sentiment_label": "Somewhat-Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "AON",
+          "relevance_score": "0.00897",
+          "ticker_sentiment_score": "0.11897",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "CVS",
+          "relevance_score": "0.004485",
+          "ticker_sentiment_score": "0.115012",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "NVDA",
+          "relevance_score": "0.013454",
+          "ticker_sentiment_score": "0.122866",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "FHI",
+          "relevance_score": "0.004485",
+          "ticker_sentiment_score": "0.103893",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "VPGLF",
+          "relevance_score": "0.004485",
+          "ticker_sentiment_score": "0.218658",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        },
+        {
+          "ticker": "CMSQF",
+          "relevance_score": "0.004485",
+          "ticker_sentiment_score": "0.04724",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "DEO",
+          "relevance_score": "0.017939",
+          "ticker_sentiment_score": "0.126008",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "MSFT",
+          "relevance_score": "0.017939",
+          "ticker_sentiment_score": "0.163144",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        },
+        {
+          "ticker": "YUM",
+          "relevance_score": "0.004485",
+          "ticker_sentiment_score": "0.103893",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "GEN",
+          "relevance_score": "0.004485",
+          "ticker_sentiment_score": "0.115012",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "ROP",
+          "relevance_score": "0.004485",
+          "ticker_sentiment_score": "0.115012",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "TSLA",
+          "relevance_score": "0.00897",
+          "ticker_sentiment_score": "0.140863",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "ELAN",
+          "relevance_score": "0.004485",
+          "ticker_sentiment_score": "0.115012",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "EBCOF",
+          "relevance_score": "0.004485",
+          "ticker_sentiment_score": "0.053049",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "NOW",
+          "relevance_score": "0.004485",
+          "ticker_sentiment_score": "0.081164",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "ZTS",
+          "relevance_score": "0.004485",
+          "ticker_sentiment_score": "0.115012",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "KD",
+          "relevance_score": "0.004485",
+          "ticker_sentiment_score": "0.053049",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "MORN",
+          "relevance_score": "0.013454",
+          "ticker_sentiment_score": "0.102739",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "SWRAY",
+          "relevance_score": "0.004485",
+          "ticker_sentiment_score": "0.081998",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "GE",
+          "relevance_score": "0.004485",
+          "ticker_sentiment_score": "0.218658",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        },
+        {
+          "ticker": "FOREX:GBP",
+          "relevance_score": "0.004485",
+          "ticker_sentiment_score": "0.040901",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "FOREX:JPY",
+          "relevance_score": "0.004485",
+          "ticker_sentiment_score": "0.040901",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    }
+  ]
+}

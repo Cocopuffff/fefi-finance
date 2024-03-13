@@ -45,7 +45,7 @@ const DisplayInstruments = () => {
           );
         })}
       <div>Raw:</div>
-      <div>{JSON.stringify(data)}</div>
+      {/* <div>{JSON.stringify(data)}</div> */}
     </div>
   );
 };
