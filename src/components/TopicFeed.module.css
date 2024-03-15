@@ -5,6 +5,7 @@
 .topicFeed {
   height: inherit;
   overflow-y: scroll;
+  box-shadow: inset 0 -10px 15px -10px rgba(0, 0, 0, 0.5);
 }
 
 .searchBar {
@@ -48,23 +49,76 @@
 .topic {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .searchTopic,
 .searchParameter,
 .edit {
   display: inline-block;
+  border: 2px solid transparent;
+}
+
+.edit,
+.modify {
+  border-radius: 5px;
+  background-color: transparent;
+  color: white;
 }
 
 .edit {
   border: none;
-  border-radius: 5px;
-  background-color: transparent;
-  color: white;
   height: 2rem;
   width: 2rem;
 }
 
 .edit:hover {
   background-color: var(--button-hover);
+}
+
+.searchParameter input {
+  min-width: 550px;
+}
+
+.modify {
+  border: 2px solid var(--selected);
+  line-height: 1.2rem;
+  font-size: calc(1.3rem + 0.6vw);
+}
+
+.disabled {
+  border: 2px solid transparent;
+}
+
+.active {
+  color: var(--selected);
+}
+
+.searchTopic h4 {
+  padding: 1px;
+  border: 2px solid transparent;
+}
+
+@media screen and (max-width: 1200px) {
+  .searchParameter input {
+    min-width: 400px;
+  }
+  .searchTopic input {
+    width: 250px;
+  }
+
+  .modify {
+    line-height: 1.1rem;
+    font-size: calc(1rem + 0.6vw);
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .topic {
+    flex-direction: column;
+  }
+  .modify {
+    min-width: max-content;
+    width: auto;
+  }
 }

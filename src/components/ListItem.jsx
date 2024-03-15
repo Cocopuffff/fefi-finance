@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useContext, useRef } from "react";
-import AddContext from "../context/AddContext";
 import styles from "./ListItem.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX } from "@fortawesome/free-solid-svg-icons";
@@ -8,7 +7,6 @@ const ListItem = (props) => {
   const [isActive, setActive] = useState(false);
   const [isHover, setHover] = useState(false);
   const [isButtonHover, setButtonHover] = useState(false);
-  const AddCtx = useContext(AddContext);
   const buttonRef = useRef();
 
   const handleButtonClick = (event) => {
@@ -26,11 +24,14 @@ const ListItem = (props) => {
     if (id !== props.airtableId) {
       setActive(false);
     }
+    if (id === props.airtableId) {
+      setActive(true);
+    }
   };
 
   useEffect(() => {
     setActive(false);
-  }, [AddCtx.addTopic]);
+  }, [props.addItem]);
 
   useEffect(() => {
     evaluateSelection(props.selectedId);

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import AddContext from "../context/AddContext";
 import TopicFeed from "./TopicFeed";
 import TopicList from "./TopicList";
 import styles from "./DisplayNews.module.css";
@@ -7,16 +6,29 @@ import styles from "./DisplayNews.module.css";
 const DisplayNews = () => {
   const [addTopic, setAddTopic] = useState(false);
   const [selectedTopic, setSelectedTopic] = useState("");
+  const [newSearchedTopic, setNewSearchedTopic] = useState("");
+
+  const passNewTopicToTopicList = (topic) => {
+    setNewSearchedTopic(topic);
+  };
 
   return (
-    <AddContext.Provider
-      value={{ addTopic, setAddTopic, selectedTopic, setSelectedTopic }}
-    >
-      <div className={`${styles.displayView}`}>
-        <TopicFeed />
-        <TopicList />
-      </div>
-    </AddContext.Provider>
+    <div className={`${styles.displayView}`}>
+      <TopicFeed
+        addTopic={addTopic}
+        setAddTopic={setAddTopic}
+        selectedTopic={selectedTopic}
+        setSelectedTopic={setSelectedTopic}
+        passNewTopicToTopicList={passNewTopicToTopicList}
+      />
+      <TopicList
+        addTopic={addTopic}
+        setAddTopic={setAddTopic}
+        selectedTopic={selectedTopic}
+        setSelectedTopic={setSelectedTopic}
+        newSearchedTopic={newSearchedTopic}
+      />
+    </div>
   );
 };
 

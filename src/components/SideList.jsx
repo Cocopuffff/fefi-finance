@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./SideList.module.css";
 import ListItem from "./ListItem";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -15,10 +15,15 @@ const SideList = (props) => {
   };
 
   const handleSelect = (id) => {
-    console.log(id);
     setSelectedItemId(id);
     props.handleSelectItem(id);
   };
+
+  useEffect(() => {
+    if (props.selectedItem && props.selectedItem.id) {
+      setSelectedItemId(props.selectedItem.id);
+    }
+  }, [props.selectedItem]);
 
   return (
     <div className={`container-fluid ${styles.sideList}`}>
@@ -42,6 +47,7 @@ const SideList = (props) => {
               onDelete={liftDelete}
               onSelect={handleSelect}
               selectedId={selectedItemId}
+              addItem={props.addItem}
             />
           );
         })}

@@ -1,9 +1,10 @@
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   --button-hover: #5f5f5f;
-  --navbar-colour: #242424;
-  --sidebarlist-colour: #242424;
-  --main-colour: #151515;
+  --navbar-colour: #303030;
+  /* #242424 */
+  --sidebarlist-colour: #303030;
+  --main-colour: #222222;
   --selected: #3466f6;
   --content-background-colour: #4e4e4e;
 }

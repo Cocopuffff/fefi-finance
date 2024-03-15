@@ -1,12 +1,10 @@
 import React, { useState, useEffect, useContext } from "react";
-import AddContext from "../context/AddContext";
 import styles from "./SummarySentiment.module.css";
 
 const SummarySentiment = (props) => {
   const [response, setResponse] = useState("");
-  const addCtx = useContext(AddContext);
 
-  const createPrompt = (data) => {
+  const createPrompt = (data, topicName) => {
     let newsFeed = [];
     if (data && data.results) {
       for (const result of data.results) {
@@ -27,8 +25,7 @@ const SummarySentiment = (props) => {
       messages: [
         {
           role: "system",
-          content:
-            "Analyse the following news feed about USDJPY and determine whether the news feed is overall 'Bearish', 'Slightly-bearish', 'Neutral', 'Slightly-Bullish' or 'Bullish'. Explain why you arrived at your conclusion.",
+          content: `Analyse the following news feed about ${topicName} and determine whether the news feed is overall 'Bearish', 'Slightly-bearish', 'Neutral', 'Slightly-Bullish' or 'Bullish'. Explain why you arrived at your conclusion.`,
         },
         {
           role: "user",
@@ -42,11 +39,17 @@ const SummarySentiment = (props) => {
 
   const submitPrompt = async () => {
     let newsFeed = props.data;
-    if (newsFeed) {
+    if (
+      newsFeed &&
+      props.topic &&
+      props.topic.fields &&
+      props.topic.fields.displayName
+    ) {
       newsFeed = JSON.parse(newsFeed);
+      let topicName = props.topic.fields.displayName;
 
       if (newsFeed.results) {
-        const prompt = createPrompt(newsFeed);
+        const prompt = createPrompt(newsFeed, topicName);
 
         try {
           const res = await fetch(import.meta.env.VITE_GROQ, {
@@ -62,7 +65,6 @@ const SummarySentiment = (props) => {
 
           if (res.ok) {
             const data = await res.json();
-            console.log(data.choices[0].message.content);
             let modifiedData;
             if (
               data.choices &&
@@ -88,17 +90,18 @@ const SummarySentiment = (props) => {
   useEffect(() => {
     submitPrompt();
   }, [props.data]);
+
   return (
-    <div>
-      {!addCtx.addTopic ? (
-        <div className={`card ${styles.card}`}>
-          <h5>News Summary and Sentiment:</h5>
-          <p>{response}</p>
+    <>
+      {!props.addTopic && (
+        <div className="my-3">
+          <div className={`card ${styles.card}`}>
+            <h5>News Summary and Sentiment</h5>
+            <p>{response}</p>
+          </div>
         </div>
-      ) : (
-        ""
       )}
-    </div>
+    </>
   );
 };
 
