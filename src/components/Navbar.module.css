@@ -11,7 +11,7 @@ a {
   position: sticky;
   background-color: var(--navbar-colour);
   justify-content: space-between;
-  box-shadow: 1px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: -20px 5px 10px 0px rgba(0, 0, 0, 0.5);
 }
 
 .logo,

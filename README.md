@@ -1,6 +1,6 @@
 ## Attributions:
 
-- ChatGPT: hide news image failure to load error by creating a stateful image component,
+- ChatGPT: hide news image failure to load error by creating a stateful image component, formatting time series and options for ECharts for React
 - Instrument sorting: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
 - Instrument filtering: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
 - Loading animation: https://blog.hubspot.com/website/css-animation-examples

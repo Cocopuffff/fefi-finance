@@ -17,7 +17,7 @@ const DisplayChart = () => {
   };
 
   return (
-    <div className="">
+    <div className="displayView">
       {addInstrument && (
         <AddInstrumentsModal
           title="Add instruments to your watchlist"
@@ -28,7 +28,7 @@ const DisplayChart = () => {
       <Chart
         instrument="BTC_USD"
         granularity="D"
-        count="6"
+        count="30"
         from=""
         to=""
         addInstrument={addInstrument}

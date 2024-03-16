@@ -1,8 +1,6 @@
 import React, { Suspense } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import NavBar from "./components/NavBar";
-// import DisplayNews from "./pages/DisplayNews";
-// import DisplayChart from "./pages/DisplayChart";
 import "./App.css";
 
 const DisplayNews = React.lazy(() => import("./pages/DisplayNews"));

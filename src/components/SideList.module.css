@@ -25,5 +25,5 @@
 }
 
 .add:hover {
-  background-color: var(--delete-button-hover);
+  background-color: var(--button-hover);
 }

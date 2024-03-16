@@ -4,7 +4,7 @@
   --navbar-colour: #303030;
   --sidebarlist-colour: #303030;
   --main-colour: #222222;
-  --selected: #3466f6;
+  --selected: #2447ff;
   --content-background-colour: #4e4e4e;
   --list-border: #ffffff0d;
 }
@@ -24,7 +24,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background-color: var(--main-colour);
+  background-color: transparent;
   border-radius: 7px;
 }
 
