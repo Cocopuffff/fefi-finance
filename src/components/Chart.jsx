@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
+import styles from "./Chart.module.css";
 
-const DisplayCandles = (props) => {
+const Chart = (props) => {
   const [data, setData] = useState(null);
   const getData = async (signal) => {
     try {
@@ -47,22 +48,8 @@ const DisplayCandles = (props) => {
     getData(controller.signal);
   }, []);
   return (
-    <div>
-      <div>Processed:</div>
-      {/* {data &&
-        data.instruments.map((result, idx) => {
-          return (
-            <div key={idx} className="row">
-              <div className="col">{result.name}</div>
-              <div className="col">{result.type}</div>
-              <div className="col">{result.displayName}</div>
-            </div>
-          );
-        })} */}
-      <div>Raw:</div>
-      <div>{JSON.stringify(data)}</div>
-    </div>
+    <div className={`${styles.chartContainer}`}>{JSON.stringify(data)}</div>
   );
 };
 
-export default DisplayCandles;
+export default Chart;

@@ -1,9 +1,10 @@
 import React from "react";
-import styles from "./Navbar.module.css";
+import styles from "./NavBar.module.css";
+import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 
-const Navbar = () => {
+const NavBar = () => {
   return (
     <nav className={`${styles.navbar}`}>
       <div className={`${styles.submenu}`}>
@@ -13,8 +14,26 @@ const Navbar = () => {
         <div>Time Frames</div>
       </div>
       <div className={`${styles.menu}`}>
-        <div className={`${styles.pages}`}>Chart</div>
-        <div className={`${styles.pages}`}>News</div>
+        <NavLink
+          className={(navData) =>
+            navData.isActive
+              ? `${styles.pages} ${styles.active}`
+              : `${styles.pages}`
+          }
+          to="/chart"
+        >
+          Chart
+        </NavLink>
+        <NavLink
+          className={(navData) =>
+            navData.isActive
+              ? `${styles.pages} ${styles.active}`
+              : `${styles.pages}`
+          }
+          to="/news"
+        >
+          News
+        </NavLink>
         <div className={`${styles.account}`}>
           <FontAwesomeIcon icon={faUser} />
         </div>
@@ -23,4 +42,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default NavBar;

@@ -1,30 +1,25 @@
-import { useState } from "react";
-import Navbar from "./components/Navbar";
-import Topic from "./components/ListItem";
-import TopicFeed from "./components/TopicFeed";
-import DisplayNews from "./components/DisplayNews";
-import DisplayInstruments from "./components/DisplayInstruments";
-import DisplayCandles from "./components/DisplayCandles";
-import TopicFeedAV from "./components/TopicFeedAV";
-import TopicList from "./components/TopicList";
+import React, { Suspense } from "react";
+import { Navigate, Route, Routes } from "react-router-dom";
+import NavBar from "./components/NavBar";
+// import DisplayNews from "./pages/DisplayNews";
+// import DisplayChart from "./pages/DisplayChart";
 import "./App.css";
+
+const DisplayNews = React.lazy(() => import("./pages/DisplayNews"));
+const DisplayChart = React.lazy(() => import("./pages/DisplayChart"));
+const NotFound = React.lazy(() => import("./pages/NotFound"));
 
 function App() {
   return (
-    <div className="">
-      <Navbar />
-      <DisplayNews />
-      {/* <TopicFeed /> */}
-      {/* <DisplayCandles
-        instrument="BTC_USD"
-        granularity="D"
-        count="6"
-        from=""
-        to=""
-      />
-      <DisplayInstruments /> */}
-      {/* <TopicFeedAV /> */}
-    </div>
+    <Suspense fallback={<h1>Loading...</h1>}>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Navigate replace to="/news" />} />
+        <Route path="news" element={<DisplayNews />} />
+        <Route path="chart" element={<DisplayChart />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Suspense>
   );
 }
 

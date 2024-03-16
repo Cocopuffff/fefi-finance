@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import TopicFeed from "./TopicFeed";
-import TopicList from "./TopicList";
-import styles from "./DisplayNews.module.css";
+import TopicFeed from "../components/TopicFeed";
+import TopicList from "../components/TopicList";
 
 const DisplayNews = () => {
   const [addTopic, setAddTopic] = useState(false);
@@ -13,7 +12,7 @@ const DisplayNews = () => {
   };
 
   return (
-    <div className={`${styles.displayView}`}>
+    <div className="displayView">
       <TopicFeed
         addTopic={addTopic}
         setAddTopic={setAddTopic}

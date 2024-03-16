@@ -6,7 +6,6 @@ const NewsCard = (props) => {
   return (
     <div className={`col-sm-6`}>
       <div className={`card my-2 ${styles.card}`}>
-        {/* <img src={props.image_url} className="card-img-top" alt={props.title} /> */}
         <Image
           src={props.image_url}
           className="card-img-top"
