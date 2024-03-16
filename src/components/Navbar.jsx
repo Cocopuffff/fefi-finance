@@ -1,17 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./NavBar.module.css";
+import ListTimeFrame from "./ListTimeFrame";
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { faUser, faCaretDown } from "@fortawesome/free-solid-svg-icons";
 
-const NavBar = () => {
+const NavBar = (props) => {
+  const [seeTimeFrames, setSeeTimeFrames] = useState(false);
+  const handleClick = () => {
+    setSeeTimeFrames(!seeTimeFrames);
+  };
   return (
     <nav className={`${styles.navbar}`}>
       <div className={`${styles.submenu}`}>
         <img src="../src/assets/Logo.png" className={`${styles.logo}`} />
-
-        <div>Ticker</div>
-        <div>Time Frames</div>
+        {props.timeFrames.map((timeFrame, idx) => {
+          return (
+            <ListTimeFrame
+              timeFrame={timeFrame}
+              key={idx}
+              setSelectedTimeFrame={props.setSelectedTimeFrame}
+              selectedTimeFrame={props.selectedTimeFrame}
+            />
+          );
+        })}
       </div>
       <div className={`${styles.menu}`}>
         <NavLink

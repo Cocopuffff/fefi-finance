@@ -3,7 +3,7 @@ import Chart from "../components/Chart";
 import WatchList from "../components/WatchList";
 import AddInstrumentsModal from "../components/AddInstrumentsModal";
 
-const DisplayChart = () => {
+const DisplayChart = (props) => {
   const [addInstrument, setAddInstrument] = useState(false);
   const [selectedInstrument, setSelectedInstrument] = useState("");
   const [newInstrument, setNewInstrument] = useState("");
@@ -26,11 +26,10 @@ const DisplayChart = () => {
         />
       )}
       <Chart
-        instrument="BTC_USD"
-        granularity="D"
-        count="30"
+        count="200"
         from=""
         to=""
+        granularity={props.selectedTimeFrame}
         addInstrument={addInstrument}
         setAddInstrument={setAddInstrument}
         selectedInstrument={selectedInstrument}

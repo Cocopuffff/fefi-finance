@@ -14,13 +14,15 @@ const WatchList = (props) => {
     if (res.ok) {
       const data = await res.json();
       setInstruments(data);
+      if (!props.selectedInstrument) {
+        props.setSelectedInstrument(data.records[0]);
+      }
     }
   };
 
   useEffect(() => {
     const controller = new AbortController();
     getInstruments(controller.signal);
-
     return () => {
       controller.abort();
     };

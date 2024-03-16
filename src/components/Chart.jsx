@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Chart.module.css";
-
 import ReactECharts from "echarts-for-react";
-import ReactEChartsCore from "echarts-for-react/lib/core";
 import * as echarts from "echarts/core";
 import { CandlestickChart } from "echarts/charts";
 import {
@@ -13,8 +11,8 @@ import {
   DatasetComponent,
 } from "echarts/components";
 import {
-  CanvasRenderer,
-  // SVGRenderer,
+  // CanvasRenderer,
+  SVGRenderer,
 } from "echarts/renderers";
 
 echarts.use([
@@ -24,7 +22,7 @@ echarts.use([
   GridComponent,
   CandlestickChart,
   DatasetComponent,
-  CanvasRenderer,
+  SVGRenderer,
 ]);
 
 const downColour = "#E1484C";
@@ -288,19 +286,26 @@ const Chart = (props) => {
   useEffect(() => {
     const controller = new AbortController();
     getData(controller.signal);
-
+    // console.log(
+    //   props.selectedInstrument,
+    //   props.granularity,
+    //   props.count,
+    //   props.from,
+    //   props.to
+    // );
     return () => {
       controller.abort();
     };
-  }, [props.selectedInstrument]);
+  }, [
+    props.selectedInstrument,
+    props.granularity,
+    props.count,
+    props.from,
+    props.to,
+  ]);
 
   return (
     <div className={`container-fluid py-3 ${styles.chartContainer}`}>
-      {/* <div className={``}>{data && JSON.stringify(data)}</div> */}
-      {/* <p>States:</p> */}
-      {/* {values && JSON.stringify(values)} */}
-      {/* {volumes && JSON.stringify(volumes)} */}
-      {/* {dateTimes && JSON.stringify(dateTimes)} */}
       <ReactECharts
         option={options}
         style={{ height: "100%", width: "100%", overflowY: "scroll" }}

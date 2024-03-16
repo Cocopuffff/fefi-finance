@@ -25,11 +25,37 @@ a {
   height: 100%;
 }
 
-.account {
+.account,
+.dropdown {
   display: flex;
   justify-content: center;
   align-items: center;
-  aspect-ratio: 1/1;
+}
+
+.dropdown {
+  position: relative;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 100%;
+  border: none;
+  background-color: transparent;
+  color: var(--button-hover);
+}
+
+.dropdownmenu {
+  display: none;
+  position: absolute;
+  z-index: 10;
+  top: 40px;
+  left: 0;
+  width: max-content;
+}
+
+.active {
+  display: block;
+}
+
+.account {
   background-color: var(--content-background-colour);
 }
 

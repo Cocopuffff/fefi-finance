@@ -1,0 +1,13 @@
+.timeFrame {
+  padding: 0 10px;
+  font-size: 0.8rem;
+  color: white;
+  background-color: var(--navbar-colour);
+  text-align: center;
+  border: none;
+}
+
+.hover,
+.active {
+  color: var(--selected);
+}
