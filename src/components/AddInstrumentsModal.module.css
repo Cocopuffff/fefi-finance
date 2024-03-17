@@ -23,11 +23,19 @@
   max-height: 80vh;
 }
 
-.header {
-  background: red;
+.header,
+.errorHeader {
   padding: 1rem;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+}
+
+.header {
+  background: var(--selected);
+}
+
+.errorHeader {
+  background-color: var(--bs-danger);
 }
 
 .header h2 {
@@ -46,12 +54,23 @@
   font-size: 1.4rem;
 }
 
+.searchRow {
+  display: flex;
+  border-bottom: 1px solid var(--button-hover);
+  align-items: center;
+}
+
+.searchIcon {
+  color: var(--bs-gray);
+  font-size: 1.4rem;
+  padding: 5px;
+}
+
 .search {
   width: 100%;
   font-size: 1.4rem;
   padding: 5px;
   border: none;
-  border-bottom: 1px solid var(--button-hover);
 }
 
 .search:focus-visible {
@@ -79,6 +98,15 @@
 .add:hover {
   background-color: var(--button-hover);
   color: white;
+}
+
+.added {
+  border: none;
+  background-color: transparent;
+  color: var(--button-hover);
+  border-radius: 5px;
+  padding: 5px;
+  cursor: not-allowed !important;
 }
 
 .actions {

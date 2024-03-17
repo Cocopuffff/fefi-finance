@@ -1,4 +1,5 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useContext } from "react";
+import Spinner from "./Spinner";
 import SummarySentiment from "./SummarySentiment";
 import NewsCard from "./NewsCard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,8 +8,10 @@ import {
   faSearch,
   faX,
   faCheck,
+  faFaceSadTear,
 } from "@fortawesome/free-solid-svg-icons";
 import styles from "./TopicFeed.module.css";
+import ErrorContext from "../context/ErrorContext";
 
 const TopicFeed = (props) => {
   const [data, setData] = useState(null);
@@ -17,6 +20,7 @@ const TopicFeed = (props) => {
   const inputRef = useRef();
   const nameRef = useRef();
   const searchParamRef = useRef();
+  const ErrorCtx = useContext(ErrorContext);
 
   const getData = async (signal) => {
     if (
@@ -38,13 +42,16 @@ const TopicFeed = (props) => {
         if (res.ok) {
           let data = await res.json();
           data = JSON.stringify(data);
-          console.log(data);
           setIsLoading(false);
           setData(data);
         }
       } catch (error) {
-        console.log(error.message);
-        setIsLoading(false);
+        if (error.name != "AbortError") {
+          console.log(error.message);
+          setIsLoading(false);
+          ErrorCtx.setIsError(true);
+          ErrorCtx.setErrorMessage(error.message);
+        }
       }
     }
   };
@@ -133,12 +140,6 @@ const TopicFeed = (props) => {
 
   return (
     <div className={`container-fluid px-5 ${styles.topicFeed}`}>
-      {/* {props.addTopic ? <p>ADD TOPIC: TRUE</p> : <p>ADD TOPIC: FALSE</p>}
-      {props.selectedTopic ? (
-        <p>{JSON.stringify(props.selectedTopic)}</p>
-      ) : (
-        <p>no selectedTopic</p>
-      )} */}
       <div className={`row d-flex justify-content-center`}>
         <div
           className={`${styles.searchBar} ${
@@ -210,38 +211,51 @@ const TopicFeed = (props) => {
           </div>
         </div>
       )}
-
-      <div className="row">
-        {data && <SummarySentiment data={data} topic={props.selectedTopic} />}
-      </div>
-      {data && (
-        <div className="row">
-          <h5>News Feed</h5>
-        </div>
+      {isLoading ? (
+        <Spinner />
+      ) : (
+        <>
+          {data && JSON.parse(data).results.length === 0 ? (
+            <div className={styles["notfound-container"]}>
+              <div className={`${styles["notfound-title"]}`}>
+                Oops! <FontAwesomeIcon icon={faFaceSadTear} />
+              </div>
+              <div className={`${styles["message"]}`}>
+                <p>No results found.</p>
+              </div>
+            </div>
+          ) : (
+            <>
+              <div className="row">
+                {data && (
+                  <SummarySentiment data={data} topic={props.selectedTopic} />
+                )}
+              </div>
+              {data && (
+                <div className="row">
+                  <h5>News Feed</h5>
+                </div>
+              )}
+              <div className="row">
+                {data &&
+                  JSON.parse(data).results.length !== 0 &&
+                  JSON.parse(data).results.map((result, idx) => {
+                    return (
+                      <NewsCard
+                        key={idx}
+                        image_url={result.image_url}
+                        source={result.source_url}
+                        title={result.title}
+                        description={result.description}
+                        link={result.link}
+                      />
+                    );
+                  })}
+              </div>
+            </>
+          )}
+        </>
       )}
-      <div className="row">
-        {isLoading ? <p>Loading</p> : ""}
-        {data && JSON.parse(data).results.length === 0 && <p>No news found</p>}
-        {
-          data &&
-            JSON.parse(data).results.length !== 0 &&
-            JSON.parse(data).results.map((result, idx) => {
-              return (
-                <NewsCard
-                  key={idx}
-                  image_url={result.image_url}
-                  source={result.source_url}
-                  title={result.title}
-                  description={result.description}
-                  link={result.link}
-                />
-              );
-            })
-          // : (
-          //   <p>No news found</p>
-          // )
-        }
-      </div>
     </div>
   );
 };

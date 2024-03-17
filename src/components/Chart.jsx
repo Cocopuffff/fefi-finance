@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
+import ErrorContext from "../context/ErrorContext";
 import styles from "./Chart.module.css";
+import Spinner from "./Spinner";
 import ReactECharts from "echarts-for-react";
 import * as echarts from "echarts/core";
 import { CandlestickChart } from "echarts/charts";
@@ -29,10 +31,12 @@ const downColour = "#E1484C";
 const upColour = "#429782";
 
 const Chart = (props) => {
-  const [data, setData] = useState(null);
+  // const [data, setData] = useState(null);
   const [values, setValues] = useState([]);
   const [volumes, setVolume] = useState([]);
   const [dateTimes, setDateTimes] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const ErrorCtx = useContext(ErrorContext);
 
   const options = {
     grid: [
@@ -233,8 +237,9 @@ const Chart = (props) => {
   const getData = async (signal) => {
     try {
       if (!props.selectedInstrument) {
-        throw new Error("must have instrument parameter");
+        return;
       }
+      setIsLoading(true);
       let url =
         import.meta.env.VITE_FXPRACTICE_OANDA +
         "/v3/instruments/" +
@@ -263,14 +268,20 @@ const Chart = (props) => {
 
       if (res.ok) {
         const data = await res.json();
-        setData(data);
+        // setData(data);
         const processedData = processData(data);
         setValues(processedData.values);
         setVolume(processedData.volumes);
         setDateTimes(processedData.categoryData);
+        setIsLoading(false);
       }
     } catch (error) {
-      console.log(error.message);
+      if (error.name !== "AbortError") {
+        console.log(error.message);
+        ErrorCtx.setIsError(true);
+        ErrorCtx.setErrorMessage(error.message);
+      }
+      setIsLoading(false);
     }
   };
 
@@ -286,13 +297,6 @@ const Chart = (props) => {
   useEffect(() => {
     const controller = new AbortController();
     getData(controller.signal);
-    // console.log(
-    //   props.selectedInstrument,
-    //   props.granularity,
-    //   props.count,
-    //   props.from,
-    //   props.to
-    // );
     return () => {
       controller.abort();
     };
@@ -306,10 +310,14 @@ const Chart = (props) => {
 
   return (
     <div className={`container-fluid py-3 ${styles.chartContainer}`}>
-      <ReactECharts
-        option={options}
-        style={{ height: "100%", width: "100%", overflowY: "scroll" }}
-      />
+      {isLoading ? (
+        <Spinner />
+      ) : (
+        <ReactECharts
+          option={options}
+          style={{ height: "100%", width: "100%", overflowY: "scroll" }}
+        />
+      )}
     </div>
   );
 };

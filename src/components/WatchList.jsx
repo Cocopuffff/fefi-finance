@@ -1,21 +1,31 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import ErrorContext from "../context/ErrorContext";
 import SideList from "./SideList";
 
 const WatchList = (props) => {
   const [instruments, setInstruments] = useState([]);
+  const ErrorCtx = useContext(ErrorContext);
 
   const getInstruments = async (signal) => {
-    const res = await fetch(import.meta.env.VITE_AIRTABLE_WATCHLIST, {
-      signal,
-      headers: {
-        Authorization: `Bearer ${import.meta.env.VITE_AIRTABLE_APIKEY}`,
-      },
-    });
-    if (res.ok) {
-      const data = await res.json();
-      setInstruments(data);
-      if (!props.selectedInstrument) {
-        props.setSelectedInstrument(data.records[0]);
+    try {
+      const res = await fetch(import.meta.env.VITE_AIRTABLE_WATCHLIST, {
+        signal,
+        headers: {
+          Authorization: `Bearer ${import.meta.env.VITE_AIRTABLE_APIKEY}`,
+        },
+      });
+      if (res.ok) {
+        const data = await res.json();
+        setInstruments(data);
+        if (!props.selectedInstrument) {
+          props.setSelectedInstrument(data.records[0]);
+        }
+      }
+    } catch (error) {
+      if (error.name !== "AbortError") {
+        console.log(error.message);
+        ErrorCtx.setIsError(true);
+        ErrorCtx.setErrorMessage(error.message);
       }
     }
   };
@@ -35,6 +45,15 @@ const WatchList = (props) => {
       setInstruments(temp);
     }
   }, [props.newInstrument]);
+
+  useEffect(() => {
+    if (instruments.records) {
+      const temp = structuredClone(instruments.records).map((record) => {
+        return record.fields.name;
+      });
+      props.setInstrumentsWatchlist(temp);
+    }
+  }, [instruments]);
 
   const deleteInstrument = async (id) => {
     try {

@@ -25,6 +25,47 @@ a {
   height: 100%;
 }
 
+.toggleTimeFramesBtn {
+  height: 100%;
+  border: none;
+  background-color: transparent;
+}
+
+.hideTimeFramesIcon {
+  border: none;
+  background-color: transparent;
+  color: white;
+  transition: 0.5s ease-in-out;
+}
+
+.showTimeFramesIcon {
+  border: none;
+  background-color: transparent;
+  color: var(--selected);
+  rotate: -90deg;
+  transition: 0.3s ease-in-out;
+}
+
+.hideTimeFrames {
+  animation: fade-out 0.3s forwards;
+  height: 100%;
+}
+
+@keyframes fade-out {
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+.showTimeFrames {
+  transition: 0.3s ease-in-out;
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
 .account,
 .dropdown {
   display: flex;
@@ -67,7 +108,7 @@ a {
 
 .menu {
   justify-content: space-between;
-  width: 200px;
+  width: 220px;
 }
 
 .pages {

@@ -1,8 +1,12 @@
 import React, { useState, useEffect, useContext } from "react";
 import styles from "./SummarySentiment.module.css";
+import ErrorContext from "../context/ErrorContext";
+import Spinner from "./Spinner";
 
 const SummarySentiment = (props) => {
   const [response, setResponse] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const ErrorCtx = useContext(ErrorContext);
 
   const createPrompt = (data, topicName) => {
     let newsFeed = [];
@@ -37,7 +41,7 @@ const SummarySentiment = (props) => {
     return JSON.stringify(prompt);
   };
 
-  const submitPrompt = async () => {
+  const submitPrompt = async (signal) => {
     let newsFeed = props.data;
     if (
       newsFeed &&
@@ -49,10 +53,12 @@ const SummarySentiment = (props) => {
       let topicName = props.topic.fields.displayName;
 
       if (newsFeed.results) {
+        setIsLoading(true);
         const prompt = createPrompt(newsFeed, topicName);
 
         try {
           const res = await fetch(import.meta.env.VITE_GROQ, {
+            signal,
             mode: "cors",
             method: "POST",
             headers: {
@@ -81,14 +87,24 @@ const SummarySentiment = (props) => {
             setResponse(modifiedData);
           }
         } catch (error) {
-          console.log(error.message);
+          if (error.name !== "AbortError") {
+            console.log(error.message);
+            ErrorCtx.setIsError(true);
+            ErrorCtx.setErrorMessage(error.message);
+          }
         }
+        setIsLoading(false);
       }
     }
   };
 
   useEffect(() => {
-    submitPrompt();
+    const controller = new AbortController();
+    submitPrompt(controller.signal);
+
+    return () => {
+      controller.abort();
+    };
   }, [props.data]);
 
   return (
@@ -97,7 +113,7 @@ const SummarySentiment = (props) => {
         <div className="my-3">
           <div className={`card ${styles.card}`}>
             <h5>News Summary and Sentiment</h5>
-            <p>{response}</p>
+            {isLoading ? <Spinner /> : <p>{response}</p>}
           </div>
         </div>
       )}

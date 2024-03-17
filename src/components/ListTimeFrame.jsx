@@ -21,7 +21,7 @@ const ListTimeFrame = (props) => {
     <button
       id={props.timeFrame.name}
       className={`${styles.timeFrame} ${
-        isActive ? (isHover ? styles.active : styles.hover) : ""
+        isActive || isHover ? styles.active : ""
       }`}
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}

@@ -1,19 +1,29 @@
 import React, { useState, useEffect, useContext } from "react";
+import ErrorContext from "../context/ErrorContext";
 import SideList from "./SideList";
 
 const TopicList = (props) => {
   const [topics, setTopics] = useState([]);
+  const ErrorCtx = useContext(ErrorContext);
 
   const getTopics = async (signal) => {
-    const res = await fetch(import.meta.env.VITE_AIRTABLE_TOPICS, {
-      signal,
-      headers: {
-        Authorization: `Bearer ${import.meta.env.VITE_AIRTABLE_APIKEY}`,
-      },
-    });
-    if (res.ok) {
-      const data = await res.json();
-      setTopics(data);
+    try {
+      const res = await fetch(import.meta.env.VITE_AIRTABLE_TOPICS, {
+        signal,
+        headers: {
+          Authorization: `Bearer ${import.meta.env.VITE_AIRTABLE_APIKEY}`,
+        },
+      });
+      if (res.ok) {
+        const data = await res.json();
+        setTopics(data);
+      }
+    } catch (error) {
+      if (error.name !== "AbortError") {
+        console.log(error.message);
+        ErrorCtx.setIsError(true);
+        ErrorCtx.setErrorMessage(error.message);
+      }
     }
   };
 

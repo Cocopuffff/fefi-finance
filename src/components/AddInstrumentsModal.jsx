@@ -1,7 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import ReactDOM from "react-dom";
+import Spinner from "./Spinner";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus, faSort } from "@fortawesome/free-solid-svg-icons";
+import {
+  faPlus,
+  faMagnifyingGlass,
+  faCheckCircle,
+} from "@fortawesome/free-solid-svg-icons";
 import styles from "./AddInstrumentsModal.module.css";
 
 const Overlay = (props) => {
@@ -119,13 +124,23 @@ const Overlay = (props) => {
         <header className={styles.header}>
           <h2>{props.title}</h2>
         </header>
-        <input
-          className={`${styles.search}`}
-          type="text"
-          placeholder="Search instrument"
-          onChange={handleFilterName}
-          ref={searchRef}
-        ></input>
+        <div className={styles.searchRow}>
+          <label htmlFor="search">
+            <FontAwesomeIcon
+              icon={faMagnifyingGlass}
+              className={styles.searchIcon}
+            />
+          </label>
+          <input
+            className={`${styles.search}`}
+            type="text"
+            placeholder="Search"
+            id="search"
+            onChange={handleFilterName}
+            ref={searchRef}
+          ></input>
+        </div>
+
         <div className={`row ${styles.subheader}`}>
           <div className="col-sm-5 d-flex">Name</div>
           <div className="col-sm-5">Type</div>
@@ -133,7 +148,7 @@ const Overlay = (props) => {
         </div>
         <div className={styles.content}>
           {isLoading ? (
-            <>Loading...</>
+            <Spinner />
           ) : (
             <>
               {filteredResult &&
@@ -147,12 +162,25 @@ const Overlay = (props) => {
                       <div className="col-sm-5">{instrument.displayName}</div>
                       <div className="col-sm-5">{instrument.type}</div>
                       <div className="col-sm-2">
-                        <button
-                          onClick={() => AddInstrumentToWatchlist(instrument)}
-                          className={`${styles.add}`}
-                        >
-                          <FontAwesomeIcon icon={faPlus} />
-                        </button>
+                        {(!props.instrumentsWatchlist ||
+                          !props.instrumentsWatchlist.includes(
+                            instrument.name
+                          )) && (
+                          <button
+                            onClick={() => AddInstrumentToWatchlist(instrument)}
+                            className={`${styles.add}`}
+                          >
+                            <FontAwesomeIcon icon={faPlus} />
+                          </button>
+                        )}
+                        {props.instrumentsWatchlist &&
+                          props.instrumentsWatchlist.includes(
+                            instrument.name
+                          ) && (
+                            <button className={`${styles.added}`}>
+                              <FontAwesomeIcon icon={faCheckCircle} />
+                            </button>
+                          )}
                       </div>
                     </div>
                   );
@@ -178,6 +206,7 @@ const AddInstrumentsModal = (props) => {
           title={props.title}
           handleAddInstrument={props.handleAddInstrument}
           okayClick={props.handleOkay}
+          instrumentsWatchlist={props.instrumentsWatchlist}
         />,
         document.querySelector("#modal-root")
       )}

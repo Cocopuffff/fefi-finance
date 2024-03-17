@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./SideList.module.css";
 import ListItem from "./ListItem";
+import Spinner from "./Spinner";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
@@ -51,6 +52,7 @@ const SideList = (props) => {
             />
           );
         })}
+      {!props.records.records && <Spinner />}
     </div>
   );
 };

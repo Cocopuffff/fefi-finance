@@ -7,6 +7,7 @@ const DisplayChart = (props) => {
   const [addInstrument, setAddInstrument] = useState(false);
   const [selectedInstrument, setSelectedInstrument] = useState("");
   const [newInstrument, setNewInstrument] = useState("");
+  const [instrumentsWatchlist, setInstrumentsWatchlist] = useState(null);
 
   const passInstrument = (instrument) => {
     setNewInstrument(instrument);
@@ -23,10 +24,11 @@ const DisplayChart = (props) => {
           title="Add instruments to your watchlist"
           handleAddInstrument={passInstrument}
           handleOkay={cancelAddInstrument}
+          instrumentsWatchlist={instrumentsWatchlist}
         />
       )}
       <Chart
-        count="200"
+        count="300"
         from=""
         to=""
         granularity={props.selectedTimeFrame}
@@ -41,6 +43,7 @@ const DisplayChart = (props) => {
         selectedInstrument={selectedInstrument}
         setSelectedInstrument={setSelectedInstrument}
         newInstrument={newInstrument}
+        setInstrumentsWatchlist={setInstrumentsWatchlist}
       />
     </div>
   );

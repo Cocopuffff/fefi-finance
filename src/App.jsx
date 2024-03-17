@@ -1,5 +1,8 @@
-import React, { Suspense, useState } from "react";
+import React, { Suspense, useContext, useState } from "react";
+import ErrorContext from "./context/ErrorContext";
+import ErrorModal from "./components/ErrorModal";
 import { Navigate, Route, Routes } from "react-router-dom";
+import Loader from "./components/Loader";
 import NavBar from "./components/NavBar";
 import "./App.css";
 
@@ -38,23 +41,42 @@ function App() {
     displayName: "1 day",
     displayShort: "1D",
   });
+  const [isError, setIsError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleDismiss = () => {
+    setIsError(false);
+  };
 
   return (
-    <Suspense fallback={<h1>Loading...</h1>}>
-      <NavBar
-        selectedTimeFrame={selectedTimeFrame}
-        setSelectedTimeFrame={setSelectedTimeFrame}
-        timeFrames={timeFrames}
-      />
-      <Routes>
-        <Route path="/" element={<Navigate replace to="/news" />} />
-        <Route path="news" element={<DisplayNews />} />
-        <Route
-          path="chart"
-          element={<DisplayChart selectedTimeFrame={selectedTimeFrame.name} />}
+    <Suspense fallback={<Loader />}>
+      <ErrorContext.Provider
+        value={{ isError, setIsError, errorMessage, setErrorMessage }}
+      >
+        <NavBar
+          selectedTimeFrame={selectedTimeFrame}
+          setSelectedTimeFrame={setSelectedTimeFrame}
+          timeFrames={timeFrames}
         />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+        <Routes>
+          <Route path="/" element={<Navigate replace to="/news" />} />
+          <Route path="news" element={<DisplayNews />} />
+          <Route
+            path="chart"
+            element={
+              <DisplayChart selectedTimeFrame={selectedTimeFrame.name} />
+            }
+          />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+        {isError && (
+          <ErrorModal
+            title="Oops, something went wrong"
+            message={errorMessage}
+            okayClicked={handleDismiss}
+          />
+        )}
+      </ErrorContext.Provider>
     </Suspense>
   );
 }

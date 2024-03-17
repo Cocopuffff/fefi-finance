@@ -1,19 +1,21 @@
 import React from "react";
-import { ReactDOM } from "react-dom";
+import ReactDOM from "react-dom";
 import styles from "./AddInstrumentsModal.module.css";
 
 const Overlay = (props) => {
   return (
     <div className={styles.backdrop} onClick={props.okayClicked}>
       <div className={`${styles.board} ${styles.modal}`}>
-        <header className={styles.header}>
+        <header className={styles.errorHeader}>
           <h2>{props.title}</h2>
         </header>
         <div className={styles.content}>
           <p>{props.message}</p>
         </div>
         <footer className={styles.actions}>
-          <Button onClick={props.okayClicked}>okay</Button>
+          <button onClick={props.okayClick} className="btn btn-primary">
+            Okay
+          </button>
         </footer>
       </div>
     </div>
