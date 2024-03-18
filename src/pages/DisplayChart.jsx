@@ -43,6 +43,7 @@ const DisplayChart = (props) => {
         selectedInstrument={selectedInstrument}
         setSelectedInstrument={setSelectedInstrument}
         newInstrument={newInstrument}
+        instrumentsWatchlist={instrumentsWatchlist}
         setInstrumentsWatchlist={setInstrumentsWatchlist}
       />
     </div>

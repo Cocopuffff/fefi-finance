@@ -13,6 +13,22 @@
   text-wrap: nowrap;
 }
 
+.priceChange {
+  overflow-x: clip;
+  text-wrap: nowrap;
+  text-align: right;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.upColour {
+  color: #429782;
+}
+
+.downColour {
+  color: #e1484c;
+}
+
 .delete {
   border: none;
   background-color: transparent;

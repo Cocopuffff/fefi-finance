@@ -47,8 +47,20 @@ const ListItem = (props) => {
       onMouseLeave={() => setHover(false)}
       onClick={handleItemClick}
     >
-      <div className={`col-6 ${styles.name}`}>{props.displayName}</div>
-      <div className="col-4">{Math.random().toFixed(2) + "%"}</div>
+      <div
+        className={`${styles.name} ${props.priceChange ? `col-6 ` : `col-10`}`}
+      >
+        {props.displayName}
+      </div>
+      {props.priceChange && (
+        <div
+          className={`col-4 ${styles.priceChange} ${
+            props.priceChange >= 0 ? styles.upColour : styles.downColour
+          }`}
+        >
+          {props.priceChange.toFixed(2) + "%"}
+        </div>
+      )}
       <button
         className={`col-2 ${styles.delete}  ${
           isHover ? "" : `${styles.hidden}`

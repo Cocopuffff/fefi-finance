@@ -59,7 +59,7 @@ function App() {
           timeFrames={timeFrames}
         />
         <Routes>
-          <Route path="/" element={<Navigate replace to="/news" />} />
+          <Route path="/" element={<Navigate replace to="/chart" />} />
           <Route path="news" element={<DisplayNews />} />
           <Route
             path="chart"

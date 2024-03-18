@@ -234,31 +234,50 @@ const Chart = (props) => {
     };
   };
 
+  const updateLatestCandles = (RawData, latestCandlesData) => {
+    const CandlesData = structuredClone(RawData);
+    for (const candle of latestCandlesData) {
+      let isInCandlesData = false;
+      for (let i = CandlesData.candles.length - 1; i >= 0; i--) {
+        if (JSON.stringify(candle) === JSON.stringify(CandlesData.candles[i])) {
+          isInCandlesData = true;
+        }
+      }
+      if (!isInCandlesData) {
+        CandlesData.candles.push(candle);
+      }
+    }
+    return CandlesData;
+  };
+
   const getData = async (signal) => {
     try {
       if (!props.selectedInstrument) {
         return;
       }
       setIsLoading(true);
-      let url =
-        import.meta.env.VITE_FXPRACTICE_OANDA +
-        "/v3/instruments/" +
-        props.selectedInstrument.fields.name +
-        "/candles";
+      let url1 = `${import.meta.env.VITE_FXPRACTICE_OANDA}/v3/instruments/${
+        props.selectedInstrument.fields.name
+      }/candles`;
 
       if (props.granularity || props.count || props.from || props.to) {
-        url = url.concat("?");
+        url1 = url1.concat("?");
       }
 
       props.granularity
-        ? (url = url.concat(`&granularity=${props.granularity}`))
+        ? (url1 = url1.concat(`&granularity=${props.granularity}`))
         : "";
-      props.count ? (url = url.concat(`&count=${props.count}`)) : "";
-      props.from ? (url = url.concat(`&from=${props.from}`)) : "";
-      props.to ? (url = url.concat(`&to=${props.to}`)) : "";
-      console.log(url);
+      props.count ? (url1 = url1.concat(`&count=${props.count}`)) : "";
+      props.from ? (url1 = url1.concat(`&from=${props.from}`)) : "";
+      props.to ? (url1 = url1.concat(`&to=${props.to}`)) : "";
 
-      const res = await fetch(url, {
+      let url2 = `${import.meta.env.VITE_FXPRACTICE_OANDA}/v3/accounts/${
+        import.meta.env.VITE_OANDA_ACCOUNT
+      }/candles/latest?candleSpecifications=${
+        props.selectedInstrument.fields.name
+      }:${props.granularity}:M`;
+
+      const res1 = await fetch(url1, {
         signal,
         headers: {
           Authorization: "Bearer " + import.meta.env.VITE_OANDA_DEMO_API_KEY,
@@ -266,10 +285,21 @@ const Chart = (props) => {
         },
       });
 
-      if (res.ok) {
-        const data = await res.json();
-        // setData(data);
-        const processedData = processData(data);
+      const res2 = await fetch(url2, {
+        signal,
+        headers: {
+          Authorization: "Bearer " + import.meta.env.VITE_OANDA_DEMO_API_KEY,
+          Connection: "Keep-Alive",
+        },
+      });
+
+      if (res1.ok && res2.ok) {
+        const data1 = await res1.json();
+        const data2 = await res2.json();
+        const latestCandles = data2.latestCandles[0].candles;
+        const updatedData = updateLatestCandles(data1, latestCandles);
+        const processedData = processData(updatedData);
+
         setValues(processedData.values);
         setVolume(processedData.volumes);
         setDateTimes(processedData.categoryData);

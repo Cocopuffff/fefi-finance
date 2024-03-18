@@ -40,15 +40,26 @@ const SideList = (props) => {
         props.records &&
         props.records.records &&
         props.records.records.map((item, idx) => {
+          let priceChange;
+          if (props.priceChanges) {
+            const priceChangeObj = props.priceChanges.find(
+              (instrument) => instrument.instrument === item.fields.name
+            );
+            if (priceChangeObj) {
+              priceChange = priceChangeObj.priceChange;
+            }
+          }
           return (
             <ListItem
               key={idx}
               airtableId={item.id}
+              name={item.fields.name}
               displayName={item.fields.displayName}
               onDelete={liftDelete}
               onSelect={handleSelect}
               selectedId={selectedItemId}
               addItem={props.addItem}
+              priceChange={priceChange}
             />
           );
         })}
