@@ -84,10 +84,17 @@ const TopicFeed = (props) => {
   }, []);
 
   useEffect(() => {
+    inputRef.current.value = "";
     const controller = new AbortController();
     getData(controller.signal);
     return () => controller.abort();
   }, [props.selectedTopic]);
+
+  useEffect(() => {
+    if (props.addTopic) {
+      inputRef.current.focus();
+    }
+  }, [props.addTopic]);
 
   const handleSearch = () => {
     if (inputRef.current.value !== "") {
@@ -97,7 +104,6 @@ const TopicFeed = (props) => {
           displayName: inputRef.current.value.split(" ")[0],
         },
       };
-      // props.setSelectedTopic(newTopic);
       createTopic(newTopic);
     }
   };

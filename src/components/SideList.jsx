@@ -9,6 +9,9 @@ const SideList = (props) => {
   const [selectedItemId, setSelectedItemId] = useState("");
   const liftDelete = (id) => {
     props.handleDelete(id);
+    if (selectedItemId === id) {
+      setSelectedItemId("");
+    }
   };
 
   const liftAdd = (event) => {

@@ -1,11 +1,12 @@
 import React, { Suspense, useContext, useState } from "react";
 import ErrorContext from "./context/ErrorContext";
 import ErrorModal from "./components/ErrorModal";
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Loader from "./components/Loader";
 import NavBar from "./components/NavBar";
 import "./App.css";
 
+const HomePage = React.lazy(() => import("./pages/HomePage"));
 const DisplayNews = React.lazy(() => import("./pages/DisplayNews"));
 const DisplayChart = React.lazy(() => import("./pages/DisplayChart"));
 const NotFound = React.lazy(() => import("./pages/NotFound"));
@@ -59,7 +60,7 @@ function App() {
           timeFrames={timeFrames}
         />
         <Routes>
-          <Route path="/" element={<Navigate replace to="/chart" />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="news" element={<DisplayNews />} />
           <Route
             path="chart"

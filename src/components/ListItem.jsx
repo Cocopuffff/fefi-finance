@@ -47,11 +47,7 @@ const ListItem = (props) => {
       onMouseLeave={() => setHover(false)}
       onClick={handleItemClick}
     >
-      <div
-        className={`${styles.name} ${props.priceChange ? `col-6 ` : `col-10`}`}
-      >
-        {props.displayName}
-      </div>
+      <div className={`${styles.name} col-6`}>{props.displayName}</div>
       {props.priceChange && (
         <div
           className={`col-4 ${styles.priceChange} ${

@@ -3,6 +3,7 @@
   width: 250px;
   position: sticky;
   overflow-y: scroll;
+  border-left: 1px solid var(--content-background-colour);
 }
 
 .sideList h6 {

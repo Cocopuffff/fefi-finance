@@ -119,8 +119,11 @@ const Overlay = (props) => {
   };
 
   return (
-    <div className={styles.backdrop} onClick={props.okayClicked}>
-      <div className={`${styles.board} ${styles.modal}`}>
+    <div className={styles.backdrop} onClick={props.okayClick}>
+      <div
+        className={`${styles.board} ${styles.modal}`}
+        onClick={(event) => event.stopPropagation()}
+      >
         <header className={styles.header}>
           <h2>{props.title}</h2>
         </header>

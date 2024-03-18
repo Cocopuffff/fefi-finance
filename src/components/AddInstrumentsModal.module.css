@@ -9,7 +9,7 @@
 }
 
 .board {
-  background: white;
+  background: var(--bs-gray-200);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   border-radius: 10px;
 }
@@ -71,6 +71,7 @@
   font-size: 1.4rem;
   padding: 5px;
   border: none;
+  background: var(--bs-gray-200);
 }
 
 .search:focus-visible {
@@ -103,7 +104,7 @@
 .added {
   border: none;
   background-color: transparent;
-  color: var(--button-hover);
+  color: var(--bs-success);
   border-radius: 5px;
   padding: 5px;
   cursor: not-allowed !important;

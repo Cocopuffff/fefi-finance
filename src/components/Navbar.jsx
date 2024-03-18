@@ -15,9 +15,11 @@ const NavBar = (props) => {
   };
 
   return (
-    <nav className={`${styles.navbar}`}>
-      <div className={`${styles.submenu}`}>
-        <img src="../src/assets/Logo.png" className={`${styles.logo}`} />
+    <nav className={styles.navbar}>
+      <div className={styles.submenu}>
+        <NavLink to="/" className={styles.logoContainer}>
+          <img src="../src/assets/Logo.png" className={styles.logo} />
+        </NavLink>
 
         {isChart && (
           <button className={styles.toggleTimeFramesBtn} onClick={handleClick}>
@@ -49,12 +51,10 @@ const NavBar = (props) => {
             })}
         </div>
       </div>
-      <div className={`${styles.menu}`}>
+      <div className={styles.menu}>
         <NavLink
           className={(navData) =>
-            navData.isActive
-              ? `${styles.pages} ${styles.active}`
-              : `${styles.pages}`
+            navData.isActive ? `${styles.pages} ${styles.active}` : styles.pages
           }
           to="/chart"
         >
@@ -62,15 +62,13 @@ const NavBar = (props) => {
         </NavLink>
         <NavLink
           className={(navData) =>
-            navData.isActive
-              ? `${styles.pages} ${styles.active}`
-              : `${styles.pages}`
+            navData.isActive ? `${styles.pages} ${styles.active}` : styles.pages
           }
           to="/news"
         >
           News
         </NavLink>
-        <div className={`${styles.account}`}>
+        <div className={styles.account}>
           <FontAwesomeIcon icon={faUser} />
         </div>
       </div>

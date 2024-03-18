@@ -22,7 +22,11 @@ const NewsCard = (props) => {
               : props.description}
           </p>
           {props.link && (
-            <a href={props.link} className={`card-link ${styles.cardLink}`}>
+            <a
+              href={props.link}
+              target="_blank"
+              className={`card-link ${styles.cardLink}`}
+            >
               {props.link}
             </a>
           )}

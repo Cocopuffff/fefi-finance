@@ -22,11 +22,11 @@
 }
 
 .upColour {
-  color: #429782;
+  color: var(--up-colour);
 }
 
 .downColour {
-  color: #e1484c;
+  color: var(--down-colour);
 }
 
 .delete {
