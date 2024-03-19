@@ -95,7 +95,6 @@ const TopicList = (props) => {
 
   return (
     <>
-      {JSON.stringify.topics}
       <SideList
         records={topics}
         title="Topics"

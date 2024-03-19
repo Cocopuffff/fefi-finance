@@ -83,7 +83,6 @@ const SummarySentiment = (props) => {
                 " "
               );
             }
-            // console.log(modifiedData);
             setResponse(modifiedData);
           }
         } catch (error) {

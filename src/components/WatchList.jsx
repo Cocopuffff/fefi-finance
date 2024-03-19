@@ -155,7 +155,6 @@ const WatchList = (props) => {
 
   return (
     <>
-      {/* {JSON.stringify(props.instrumentsWatchlist)} */}
       <SideList
         records={instruments}
         title="Watchlist"
